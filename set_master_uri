@@ -1,0 +1,6 @@
+#!/bin/bash
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "Master URI : ${GREEN}$(get_master)${NC}"
+export ROS_MASTER_URI=$(get_master)

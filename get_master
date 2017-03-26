@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat ~/Scripts/config/master_uri.conf

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Setting master to: http://"$1":11311"
+echo "http://"$1":11311" > ~/Scripts/config/master_uri.conf
+export ROS_MASTER_URI=$(get_master)
