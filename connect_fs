@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo -e "Connecting to SSHFS: $1"
+#sshfs -o idmap=user $1: ~/Remote/gcv
+# Split the string to get the hostname
+IFS='@ ' read -r -a array <<< "$1"
+for el in "${array[@]}"
+do
+	echo "$el"
+done
+# Connect to SSHFS
+sshfs -o idmap=user "$1:" "/home/astreinw/Remote/${array[1]}"
