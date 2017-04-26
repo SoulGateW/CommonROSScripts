@@ -3,7 +3,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 if [ "$1" = "" ]; then
-   echo -e "ROS_IP     : ${GREEN}127.0.0.1${NC}"
+   echo -e "ROS_IP     : ${GREEN}<NOT SET>${NC}"
    _ROS_IP="127.0.0.1" 
 else
    echo -e "ROS_IP     : ${GREEN}$1${NC}"
