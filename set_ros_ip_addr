@@ -1,0 +1,14 @@
+#!/bin/bash
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+if [ "$1" = "" ]; then
+   echo -e "ROS_IP     : ${GREEN}127.0.0.1${NC}"
+   _ROS_IP="127.0.0.1" 
+else
+   echo -e "ROS_IP     : ${GREEN}$1${NC}"
+   _ROS_IP="$1"
+fi
+
+echo "$_ROS_IP" > ~/Scripts/config/ros_ip.conf
+export ROS_IP=$_ROS_IP

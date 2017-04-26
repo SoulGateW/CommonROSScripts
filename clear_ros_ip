@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export ROS_IP=""
+echo "" > ~/Scripts/config/ros_ip.conf
+echo "ROS IP cleared."

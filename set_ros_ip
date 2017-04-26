@@ -1,0 +1,3 @@
+#!/bin/bash
+
+source ~/Scripts/set_ros_ip_addr "`source ~/Scripts/get_iface_ip "$1"`"
