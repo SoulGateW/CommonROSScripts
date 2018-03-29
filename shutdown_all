@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ssh edf@gcv "sudo shutdown now"
+ssh edf@aries "sudo shutdown now"
+ssh edf@taurus "sudo shutdown now"

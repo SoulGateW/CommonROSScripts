@@ -4,11 +4,10 @@ NC='\033[0m'
 
 if [ "$1" = "" ]; then
    echo -e "ROS_IP     : ${GREEN}<NOT SET>${NC}"
-   _ROS_IP="127.0.0.1" 
+   echo "" > ~/Scripts/config/ros_ip.conf
+   unset ROS_IP 
 else
    echo -e "ROS_IP     : ${GREEN}$1${NC}"
-   _ROS_IP="$1"
+   export ROS_IP="$1"
+   echo "$ROS_IP" > ~/Scripts/config/ros_ip.conf
 fi
-
-echo "$_ROS_IP" > ~/Scripts/config/ros_ip.conf
-export ROS_IP=$_ROS_IP

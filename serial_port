@@ -1,0 +1,9 @@
+#!/bin/bash
+# Provides simple access to serial device from /dev with typing on screen visible
+# Original command is too cryptic to remember.
+#
+# Usage:   serial_port device_name
+# Example: serial_port ttyUSB0
+
+echo -e "Connecting to /dev/$1"
+tee stderr | busybox microcom "/dev/$1"

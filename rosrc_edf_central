@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# ROS runscript for EDF-Central
+
+BLUE='\033[0;34m'
+GREEN='\033[0;32m'
+LIGHTRED='\033[1;31m'
+LIGHTCYAN='\033[1;34m'
+NC='\033[0;0m'
+
+#ROS: Kinetic Kame
+export LC_ALL="C"
+source /opt/ros/kinetic/setup.bash                  # ROS Kinetic Main Environment
+echo -e "ROS Version:${LIGHTRED} Kinetic Kame ${NC}"
+
+#ROS: Java
+source ~/ROS/rosjava/devel/setup.bash
+echo -e "ROS Java   :${GREEN} Configured ${NC}"
+
+#ROS: Android
+export PATH=$PATH:~/Android/Sdk/tools:~/Android/Sdk/platform-tools:/opt/android-studio/bin
+export ANDROID_HOME=~/Android/Sdk
+echo -e "ROS Android:${GREEN} Configured ${NC}"
+
+#EDF Subsystem
+source ~/ROS/edf/catkin_ws/devel/setup.bash
+echo -e "EDF System :${GREEN} Initialized ${NC}"
+
+#ROS: Additional Scripts
+source ~/ROS/ros_common/catkin_ws/devel/setup.bash
+export PATH=$PATH:~/Scripts
+
+#ROS IP
+source set_master_uri
+source set_ros_ip_addr "`get_ros_ip`"
+
+#Setting AMD video card for RVIZ and GAZEBO
+DRI_PRIME=1
+echo -e "Prime DRI  : ${GREEN}AMD${NC}"
+
+echo ""
