@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# ROS runscript for EDF-Central
+
+BLUE='\033[0;34m'
+GREEN='\033[0;32m'
+LIGHTRED='\033[1;31m'
+LIGHTCYAN='\033[1;34m'
+NC='\033[0;0m'
+
+#ROS: Kinetic Kame
+export LC_ALL="C"
+source /opt/ros/kinetic/setup.bash                  # ROS Kinetic Main Environment
+echo -e "ROS Version:${LIGHTRED} Kinetic Kame ${NC}"
