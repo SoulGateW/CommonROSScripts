@@ -12,3 +12,12 @@ NC='\033[0;0m'
 export LC_ALL="C"
 source /opt/ros/kinetic/setup.bash                  # ROS Kinetic Main Environment
 echo -e "ROS Version:${LIGHTRED} Kinetic Kame ${NC}"
+
+#ROS: Additional Scripts
+export PATH=$PATH:~/Scripts
+
+#ROS IP
+source set_master_uri
+source set_ros_ip_addr "`get_ros_ip`"
+
+echo ""
