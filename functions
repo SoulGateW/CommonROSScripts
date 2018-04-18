@@ -1,0 +1,50 @@
+#!/bin/bash
+# Bash functions to be included in .bashrc file
+# to prevent constant use of "source" thing.
+
+# Activate "cling" environment of miniconda
+function activate_cling () {
+  source "activate_cling"
+}
+
+function cling () {
+  activate_cling
+}
+
+# Advanced jupyter notebook, running conda and additional languages
+function jupyter_x () {
+  source "activate_cling"
+  jupyter notebook
+}
+
+# Setting ROS master
+function set_master () {
+  source set_master $1
+}
+
+function master-uri () {
+  set_master $1
+}
+
+# Setting ROS IP address
+function set_ros_ip_addr () {
+  source set_ros_ip_addr $1
+}
+
+function master-ip () {
+  set_ros_ip_addr $1
+}
+
+# Clearing ROS IP address
+function clear_ros_ip () {
+  source clear_ros_ip
+}
+
+# Setting ROS Master and IP
+function master () {
+  set_master $1
+  IP="$(ip_from_domain $1)"
+  set_ros_ip_addr $IP
+}
+
+#----                                END                                   ----#

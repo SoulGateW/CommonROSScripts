@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Get IP address from domain name. First will look in hosts file,
+# In case IP address is supplied as input, it will be forwarded to output.
+# Params:
+#  $1 - Domain name or IP address
+# Returns:
+#  String containing IP address of hostname is found
+#  Empty string if hostname is not found
+#
+# Example usage: ip_from_domain example.com
+
+INPUT="$(echo "$1" | grep "^[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+$")"
+if [ "$INPUT" != "" ]; then
+  echo "$INPUT"
+else
+  HOSTS_LOOKUP="$(cat /etc/hosts | grep "[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+.*$1.*" | cut -d ' ' -f 1)"
+  RESULT="$(echo $HOSTS_LOOKUP | grep "^[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+$")"
+  if [ "$RESULT" = "" ]; then
+    HOSTS_LOOKUP="$(cat /etc/hosts | grep "[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+.*$1.*" | cut -d$'\t' -f 1)"
+    RESULT="$(echo $HOSTS_LOOKUP | grep "^[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+$")"
+  fi
+  if [ "$RESULT" = "" ]; then
+    nslookup $1 | grep "Address: \+[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+" | cut -d ' ' -f 2
+  else
+    echo "$RESULT"
+  fi
+fi
+
+#----                                 END                                  ----#

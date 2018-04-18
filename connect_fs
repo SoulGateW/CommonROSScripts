@@ -1,4 +1,5 @@
 #!/bin/bash
+# Mount remote filesystem via SSHFS.
 
 echo -e "Connecting to SSHFS: $1"
 #sshfs -o idmap=user $1: ~/Remote/gcv

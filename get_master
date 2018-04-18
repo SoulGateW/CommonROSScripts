@@ -1,3 +1,6 @@
 #!/bin/bash
+# Get stored master URI
+# Returns:
+#  Master URI currently stored in "master_uri.conf"
 
 cat ~/Scripts/config/master_uri.conf

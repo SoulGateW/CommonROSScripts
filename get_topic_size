@@ -1,3 +1,11 @@
 #!/bin/bash
+# Subscribes to a topic, waits for first message to arrive,
+# then count it's size in bytes.
+# Params:
+#  $1 - Topic name.
+# Returns:
+#  String containing size of first received message in bytes.
+#
+# Example usage: get_topic_size /rosout
 
 rostopic echo $1 -n 1 | wc -c

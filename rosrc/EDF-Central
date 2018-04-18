@@ -1,16 +1,21 @@
 #!/bin/bash
 
-# ROS runscript for EDF-Central
+#------------------------------------------------------------------------------#
+#----                     ROS runscript for EDF-Central                    ----#
+#------------------------------------------------------------------------------#
 
+# Color values
 BLUE='\033[0;34m'
 GREEN='\033[0;32m'
 LIGHTRED='\033[1;31m'
 LIGHTCYAN='\033[1;34m'
 NC='\033[0;0m'
 
+#----                               ROS                                    ----#
+
 #ROS: Kinetic Kame
 export LC_ALL="C"
-source /opt/ros/kinetic/setup.bash                  # ROS Kinetic Main Environment
+source /opt/ros/kinetic/setup.bash                # ROS Kinetic Main Environment
 echo -e "ROS Version:${LIGHTRED} Kinetic Kame ${NC}"
 
 #ROS: Java
@@ -22,20 +27,38 @@ export PATH=$PATH:~/Android/Sdk/tools:~/Android/Sdk/platform-tools:/opt/android-
 export ANDROID_HOME=~/Android/Sdk
 echo -e "ROS Android:${GREEN} Configured ${NC}"
 
-#EDF Subsystem
+#ROS: EDF packages
 source ~/ROS/edf/catkin_ws/devel/setup.bash
 echo -e "EDF System :${GREEN} Initialized ${NC}"
 
 #ROS: Additional Scripts
 source ~/ROS/ros_common/catkin_ws/devel/setup.bash
+
+#ROS: Aries packages
+source ~/ROS/aries/catkin_ws/devel/setup.bash
+
+#ROS: Additional Scripts
 export PATH=$PATH:~/Scripts
 
-#ROS IP
+#ROS: IP
 source set_master_uri
 source set_ros_ip_addr "`get_ros_ip`"
 
-#Setting AMD video card for RVIZ and GAZEBO
+#----                             TensorFlow                               ----#
+
+#export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+#export PYTHONPATH=$PYTHONPATH:`pwd`/ML/tensorflow/models/research/slim
+
+#----                              Specific                                ----#
+
+#Setting AMD video card for heavy apps like RVIZ and GAZEBO
 DRI_PRIME=1
 echo -e "Prime DRI  : ${GREEN}AMD${NC}"
 
+#------------------------------------------------------------------------------#
+# Set functions for bash to avoid "source" thing. This one is ALWAYS last.
+source ~/Scripts/functions
+#------------------------------------------------------------------------------#
+
 echo ""
+#----                                END                                   ----#

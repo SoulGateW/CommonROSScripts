@@ -1,5 +1,10 @@
 #!/bin/bash
+# This script sets ROS Master URI and saves it for all subsequent bash sessions.
 
-echo "Setting master to: http://"$1":11311"
+# Colors
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "Master URI : ${GREEN}http://"$1":11311${NC}"
 echo "http://"$1":11311" > ~/Scripts/config/master_uri.conf
 export ROS_MASTER_URI=$(get_master)

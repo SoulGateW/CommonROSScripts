@@ -1,3 +1,6 @@
 #!/bin/bash
+# Get stored ROS IP address.
+# Returns:
+#  Master URI currently stored in "ros_ip.conf"
 
 cat ~/Scripts/config/ros_ip.conf

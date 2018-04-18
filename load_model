@@ -1,6 +1,10 @@
 #!/bin/bash
-
 # Load model to parameter server
-# Usage: load_model <parameter_name> <model_file>
+# Params:
+#  $1 - Parameter name to store model.
+#  $2 - Model file (URDF)
+#
+# Example Usage: load_model <parameter_name> <model_file>
+
 echo -e "Loading model $2 to $1"
 rosparam set $1 "`cat $2`"

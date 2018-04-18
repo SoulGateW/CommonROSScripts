@@ -1,5 +1,5 @@
 #!/bin/bash
-
 # Setting default model (robot_description)
 # Usage: set_model <file_name>
+
 load_model "robot_description" "$1"

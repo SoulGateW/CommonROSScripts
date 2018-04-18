@@ -1,4 +1,7 @@
 #!/bin/bash
+# Sets master URI from value stored in config file.
+
+# Colors
 GREEN='\033[0;32m'
 NC='\033[0m'
 
