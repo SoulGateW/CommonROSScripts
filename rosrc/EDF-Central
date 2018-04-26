@@ -44,6 +44,10 @@ export PATH=$PATH:~/Scripts
 source set_master_uri
 source set_ros_ip_addr "`get_ros_ip`"
 
+#----                              OpenWRT                                 ----#
+export PATH=$PATH:~/Environments/openwrt_mips_24kc/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl/bin
+export STAGING_DIR=~/Environments/openwrt_mips_24kc/staging_dir/toolchain-mips_24kc_gcc-7.3.0_musl
+
 #----                             TensorFlow                               ----#
 
 #export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
