@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DEVICE=$(cat ~/Scripts/config/device.conf)
+
+if [ "$DEVICE" == "SFR" ] 
+then
+	source ~/Scripts/battery_scripts/sfr_pc_pocket
+fi
