@@ -1,0 +1,44 @@
+#!/bin/bash
+
+setkeycodes 10 30	# A
+setkeycodes 11 44	# Z
+setkeycodes 12 18	# E
+setkeycodes 13 19	# R
+setkeycodes 14 20	# T
+setkeycodes 15 21	# Y
+setkeycodes 16 22	# U
+setkeycodes 17 23	# I
+setkeycodes 18 24	# O
+setkeycodes 19 25	# P
+
+setkeycodes 0f 15	# TAB
+setkeycodes 1e 16	# Q
+setkeycodes 1f 31	# S
+setkeycodes 20 32	# D
+setkeycodes 21 33 	# F
+setkeycodes 22 34 	# G
+setkeycodes 23 35	# H
+setkeycodes 24 36	# J
+setkeycodes 25 37	# K
+setkeycodes 26 38	# L
+setkeycodes 0e 50	# M
+
+setkeycodes 3a 58	# CAPS LOCK
+setkeycodes 2c 17	# W
+setkeycodes 2d 45	# X
+setkeycodes 2e 46	# C
+setkeycodes 2f 47	# V
+setkeycodes 30 48	# B
+setkeycodes 31 49	# N
+#setkeycodes 32 ??	# ^
+setkeycodes 33 51	# ,/<
+setkeycodes 34 52	# ./>
+setkeycodes e01c 28	# ENTER
+
+setkeycodes e038 14     # Backspace
+setkeycodes 27 56	# ALT
+setkeycodes 28 100	# AltGR = R ALT
+
+# FN KEYCODES
+setkeycodes e053 12	#FN+M = -
+setkeycodes 3c 55	#FN+P = *
