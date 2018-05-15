@@ -20,4 +20,10 @@ export PATH=$PATH:~/Scripts
 source set_master_uri
 source set_ros_ip_addr "`get_ros_ip`"
 
+#Functions
+source ~/Scripts/functions
+
+#SSH Connection shortcuts
+PATH=$PATH:~/Scripts/connect
+
 echo ""
