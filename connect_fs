@@ -9,5 +9,13 @@ for el in "${array[@]}"
 do
 	echo "$el"
 done
-# Connect to SSHFS
-sshfs -o idmap=user "$1:" "/home/astreinw/Remote/${array[1]}"
+# Connect to SSHFS, use port if specified.
+if [ "$2" != "" ]
+then
+	sshfs -o idmap=user "$1:" "/home/astreinw/Remote/${array[1]}"
+else
+	sshfs -p $2 -o idmap=user "$1:" "/home/astreinw/Remote/${array[1]}"
+fi
+
+# Old command used
+#sshfs -o idmap=user "$1:" "/home/astreinw/Remote/${array[1]}"
