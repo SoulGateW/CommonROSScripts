@@ -53,6 +53,10 @@ export STAGING_DIR=~/Environments/openwrt_mips_24kc/staging_dir/toolchain-mips_2
 #export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 #export PYTHONPATH=$PYTHONPATH:`pwd`/ML/tensorflow/models/research/slim
 
+#----                              MyCroft                                 ----#
+# Set LOCALE for Mycroft CLI to work properly.
+export LC_ALL="en_US.UTF-8"
+
 #----                              Specific                                ----#
 
 #Setting AMD video card for heavy apps like RVIZ and GAZEBO
