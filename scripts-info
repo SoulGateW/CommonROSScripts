@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Short information about Scripts.
+
+echo ""
+echo "----                                SCRIPTS INFO                            ----"
+echo ""
+echo "activate_cling    - Activate \"cling\" environment of conda installation"
+echo "battery           - Prints current battery level"
+echo "clear_ros_ip      - Clears ROS IP address"
+echo "connect_fs        - Connects filesystem of remote device"
+echo "functions         - Should be included in .bashrc to avoid sourcing several scripts"
+echo "get_iface_ip      - Get IP address of network interface"
+echo "get_master        - Get ROS Master URI"
+echo "get_ros_ip        - Get ROS IP address"
+echo "get_topic_size    - Get size of one message of ROS topic"
+echo "ip_from_domain    - Get IP address from domain name"
+echo "load_model        - Loads URDF model to ROS parameter (user specified)"
+echo "scripts-info      - Prints informaion about scripts (this file)"
+echo "serial-port       - Provides simple access to serial device with typing on screen visible"
+echo "set_master        - Sets ROS Master URI and save it for subsequent bash sessions"
+echo "set_master_uri    - Set ROS Master URI from stored value (do not use directly)"
+echo "set_model         - Loads URDF model to ROS parameter (robot_description)"
+echo "set_ros_ip        - Sets ROS IP by specifying network adapter"
+echo "set_ros_ip_addr   - Sets ROS IP by specifying IP address directly"
+echo "sfr_keymap        - Enable keymap for SFR M! PC Pocket UMPC"
+echo "sshd.sh           - Sets resolution for TV as second screen. Used in Taiwan."
+echo ""
