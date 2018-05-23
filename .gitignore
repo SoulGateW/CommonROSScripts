@@ -1,3 +1,4 @@
 config
 connect
-check_dante
+check_hosts
+tests
